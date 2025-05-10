@@ -31,3 +31,8 @@ uvicorn main:app --reload
 ---
 
 All the data validation performed by fastapi is taken care of pydantic and also it is suggested to move all the static paths (/blog/unpublished) before the dynamic paths (/blog/{id}) to avoid conflicts
+
+Swagger comes with fast api
+http://127.0.0.1:8000/docs
+
+So if we navigate to /docs we can see the Swagger documentation

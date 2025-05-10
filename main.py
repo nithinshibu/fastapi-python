@@ -1,4 +1,5 @@
 # import the FAST API
+from typing import Optional
 from fastapi import FastAPI
 
 # create an instance of the FastAPI
@@ -12,6 +13,17 @@ app = FastAPI()
 def index():
     return {'data':'blog list'}
 
+
+#handle the query parameters
+#here limit and published are query parameter
+#here we are also giving default values
+#suppose we need an optional paramater called sort
+@app.get('/blog')
+def limitedblog(limit: int=10, published: bool=True,sort: Optional[str]=None):
+    sort_info = sort if sort else "default sorting"
+    return {'data': f'{limit} {"published" if published else "unpublished"} blog from db and sorted in {sort_info}'}
+
+
 # @app.get('/about')
 # def about():
 #     return {'data':'about page'}
@@ -20,10 +32,11 @@ def index():
 def unpublished():
     return {'data':'all unpublished blogs'}
 
+#here id is a path parameter
 @app.get('/blog/{id}')
 def show(id:int):
     #fetch blog with id = id
-    return {'data':id}
+    return {'data':id} 
 
 @app.get('/blog/{id}/comments')
 def comments(id):
