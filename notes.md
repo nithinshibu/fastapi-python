@@ -1,4 +1,4 @@
-#Python Fast API installation guide
+# Python Fast API installation guide
 
 Link : [fastapi](https://fastapi.tiangolo.com/)
 
@@ -19,3 +19,9 @@ fastapi-example-env\Scripts\activate.bat
 pip install fastapi
 
 pip install uvicorn
+
+---
+
+### Run the server with the command
+
+uvicorn main:app --reload
