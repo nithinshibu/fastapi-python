@@ -40,3 +40,11 @@ So if we navigate to /docs we can see the Swagger documentation
 If we want to run the main.py file inside the blog folder then we have to use the command
 
 uvicorn blog.main:app --reload
+
+---
+
+pip install SQLAlchemy
+
+[InstallationGuide](https://docs.sqlalchemy.org/en/20/intro.html#installation)
+
+Download Tableplus app
