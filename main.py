@@ -1,6 +1,7 @@
 # import the FAST API
 from typing import Optional
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 # create an instance of the FastAPI
 app = FastAPI()
@@ -48,3 +49,12 @@ def comments(id,limit=5):
 def comments(id):
     #fetch comments of blog with id = id
     return {'data':{'1','2'}}
+
+class Blog(BaseModel):
+    title:str
+    body:str
+    published:Optional[bool]
+
+@app.post('/blog')
+def create_blog(request:Blog):
+    return {'data':f'Blog is created with title as {request.title}'}
