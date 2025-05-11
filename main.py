@@ -38,6 +38,12 @@ def show(id:int):
     #fetch blog with id = id
     return {'data':id} 
 
+#python fastapi is intelligent enough to understand what comes from a path parameter (id) and what comes from query parameter(limit)
+@app.get('/blog/{id}/comments')
+def comments(id,limit=5):
+    #fetch comments of blog with id = id
+    return {'data':{'1','2',f'{limit}'}}
+
 @app.get('/blog/{id}/comments')
 def comments(id):
     #fetch comments of blog with id = id
