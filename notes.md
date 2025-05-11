@@ -36,3 +36,7 @@ Swagger comes with fast api
 http://127.0.0.1:8000/docs
 
 So if we navigate to /docs we can see the Swagger documentation
+
+If we want to run the main.py file inside the blog folder then we have to use the command
+
+uvicorn blog.main:app --reload
